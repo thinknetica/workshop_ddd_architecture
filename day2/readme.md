@@ -14,10 +14,14 @@
 gem exec nextgen create oauth-github
 ```
 
+2.5. OpenAPI
+
+TODO: доп.слайды
+
+stoplight.io
+
+docker-swagger
+
 TODO-план:
-- ArchiMate
-- archi
-- От DDD к микросервисам (генератор приложения)
 - OpenAPI
 - AsyncAPI
-- ДЗ
