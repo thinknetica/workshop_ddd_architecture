@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="(new model)" id="id-4a4dfdd01dbd4a01b6381da2c291084f" version="5.0.0">
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="Привлечение лидов" id="id-4a4dfdd01dbd4a01b6381da2c291084f" version="5.0.0">
   <folder name="Strategy" id="id-9d214e95b44b42ceb953796afda055e0" type="strategy"/>
   <folder name="Business" id="id-6010b65bae1442659a1aae787096c568" type="business">
     <folder name="Акторы" id="id-5bfabb07e4b446b8a2f1b17910899e9b">
@@ -153,7 +153,10 @@
         <child xsi:type="archimate:DiagramObject" id="id-6c64c027c3a84dc7b10df03a1dfb2437" targetConnections="id-a24754bb97214a9784988abe55ef4803 id-be16caa2268e43919067887272452108 id-aba4f317633d4184a3287a3029063e18" archimateElement="id-50d80f45ee2f49eb990c922085ffd2a9">
           <bounds x="180" y="36" width="120" height="55"/>
           <sourceConnection xsi:type="archimate:Connection" id="id-1316aea79d8e47b6a7d9147c836d29cc" source="id-6c64c027c3a84dc7b10df03a1dfb2437" target="id-b6603277c3094eb1b0eac79a7e0337ba" archimateRelationship="id-e6aaf51124194d78b8d462e5be159fa1"/>
-          <sourceConnection xsi:type="archimate:Connection" id="id-0b7f4194790a4fd3b16ed04be118d24f" source="id-6c64c027c3a84dc7b10df03a1dfb2437" target="id-a95f5fdad0924f7384c36e03eebad9ea" archimateRelationship="id-99e08a1e1d004bfbb273ab41306d6c2c"/>
+          <sourceConnection xsi:type="archimate:Connection" id="id-0b7f4194790a4fd3b16ed04be118d24f" source="id-6c64c027c3a84dc7b10df03a1dfb2437" target="id-a95f5fdad0924f7384c36e03eebad9ea" archimateRelationship="id-99e08a1e1d004bfbb273ab41306d6c2c">
+            <bendpoint startX="250" startY="-3" endX="250" endY="-327"/>
+            <bendpoint startX="250" startY="321" endX="250" endY="-3"/>
+          </sourceConnection>
         </child>
       </child>
       <child xsi:type="archimate:DiagramObject" id="id-017d47af74324841a221229ba7ad2956" archimateElement="id-28497aa1b8ec45ec8240453472b990a8">
