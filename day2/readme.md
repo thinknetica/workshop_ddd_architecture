@@ -16,11 +16,10 @@ gem exec nextgen create oauth-github
 
 2.5. OpenAPI
 
-TODO: доп.слайды
-
+TODO добавить ссылки на документацию и инструменты
 stoplight.io
-
 docker-swagger
+prism
 
 TODO-план:
 - OpenAPI
