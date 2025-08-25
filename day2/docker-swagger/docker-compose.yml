@@ -1,0 +1,10 @@
+---
+services:
+  swagger:
+    image: docker.swagger.io/swaggerapi/swagger-editor
+    container_name: swagger
+    restart: always
+    networks:
+      - default
+    ports:
+      - "3333:8080"
