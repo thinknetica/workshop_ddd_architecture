@@ -9,3 +9,6 @@ TODO-план:
 - oauth-github-приложение
 - арх.решения
 - Освоим BPMN-диаграммы
+
+
+ADR неплохо прописаны в https://github.com/asyncapi/studio/tree/master
