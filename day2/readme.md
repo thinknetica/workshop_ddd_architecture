@@ -27,9 +27,9 @@ TODO-план:
 - OpenAPI
 - AsyncAPI
 
-Инструменты:
+Cсылки на документацию и инструменты:
 
-https://studio.asyncapi.com/
+- [AsyncAPI Studio](https://studio.asyncapi.com/)
 
 https://deepwiki.com/asyncapi/studio/2.2-docker-deployment
 
