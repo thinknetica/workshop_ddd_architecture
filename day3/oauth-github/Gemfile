@@ -1,0 +1,49 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "bootsnap", require: false
+gem "good_migrations"
+gem "importmap-rails"
+gem "pg", "~> 1.1"
+gem "propshaft"
+gem "puma", ">= 5.0"
+gem "rails", "~> 8.0.2", ">= 8.0.2.1"
+gem "stimulus-rails"
+gem "turbo-rails"
+gem "tzinfo-data", platforms: %i[windows jruby]
+
+gem 'devise'
+gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'slim-rails'
+gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
+
+group :development, :test do
+  gem "brakeman", require: false
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "dotenv", ">= 3.0"
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+end
+
+group :development do
+  gem "bundler-audit", require: false
+  gem "pgcli-rails"
+  gem "rack-mini-profiler"
+  gem "rubocop", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "web-console"
+  gem 'pry-rails'
+  gem 'pry-byebug'
+end
+
+group :test do
+  gem "capybara", require: false
+  gem "selenium-webdriver", require: false
+  gem "shoulda-matchers"
+end
