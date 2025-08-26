@@ -30,8 +30,8 @@ TODO-план:
 Cсылки на документацию и инструменты:
 
 - [AsyncAPI Studio](https://studio.asyncapi.com/)
-
-https://deepwiki.com/asyncapi/studio/2.2-docker-deployment
+- [Документация по AsyncAPI](https://www.asyncapi.com/docs)
+- [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
 
 ```
 docker build -f apps/studio/Dockerfile -t asyncapi/studio .
