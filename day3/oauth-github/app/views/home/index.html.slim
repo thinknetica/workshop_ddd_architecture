@@ -1,0 +1,7 @@
+- provide(:title, "Home")
+p
+  | Find me in app/views/home/index.html.erb
+- unless user_signed_in?
+  = button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false }
+- else
+  = current_user.inspect
