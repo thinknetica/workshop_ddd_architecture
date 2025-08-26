@@ -18,8 +18,8 @@ gem exec nextgen create oauth-github
 
 TODO добавить ссылки на документацию и инструменты
 stoplight.io
-swagger-editor
-[redoc](https://github.com/Redocly/redoc)
+- [swagger-editor](swagger-editor)
+- [redoc](https://github.com/Redocly/redoc)
 prism
 
 TODO-план:
