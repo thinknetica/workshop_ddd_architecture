@@ -1,0 +1,622 @@
+openapi: 3.0.4
+info:
+  title: Учебные материалы
+  version: 1.0.0
+  description: API для управления образовательным контентом LMS
+paths:
+  /courses:
+    get:
+      summary: Получить список курсов
+      tags: [Курсы]
+      responses:
+        '200':
+          description: Список курсов
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Course'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      summary: Создать новый курс
+      tags: [Курсы]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о курсе
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                description:
+                  $ref: '#/components/parameters/Description'
+      responses:
+        '201':
+          description: Курс создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+  /courses/{course_id}:
+    parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: integer
+    get:
+      summary: Детальная информация о курсе
+      tags: [Курсы]
+      responses:
+        '200':
+          description: Детальная информация о курсе
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    patch:
+      summary: Редактирование информации о курсе
+      tags: [Курсы]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о курсе
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                description:
+                  $ref: '#/components/parameters/Description'
+      responses:
+        '200':
+          description: Курс отредактирован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      summary: Удаление курса
+      tags: [Курсы]
+      responses:
+        '200':
+          description: Данные курса
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Course'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /courses/{course_id}/blocks:
+    parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Получить блоки курса
+      tags: [Блоки, Курсы]
+      responses:
+        '200':
+          description: Список блоков
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Block'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      summary: Создать блок курса
+      tags: [Блоки]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о блоке
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                order:
+                  $ref: '#/components/parameters/Order'
+      responses:
+        '201':
+          description: Блок создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Block'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /courses/{course_id}/blocks/{block_id}:
+    parameters:
+      - name: course_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: block_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Редактировать блок курса
+      tags: [Блоки]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о блоке
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                order:
+                  $ref: '#/components/parameters/Order'
+      responses:
+        '200':
+          description: Блок отредактирован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Block'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      summary: Удалить блок
+      tags: [Блоки]
+      responses:
+        '200':
+          description: Блок удален
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Block'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /blocks/{block_id}/lessons:
+    parameters:
+      - name: block_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Получить уроки блока
+      tags: [Блоки, Уроки]
+      responses:
+        '200':
+          description: Список уроков
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lesson'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    post:
+      summary: Создать урок
+      tags: [Уроки]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные об уроке
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                content:
+                  $ref: '#/components/parameters/Content'
+      responses:
+        '201':
+          description: Урок создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lesson'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /blocks/{block_id}/lessons/{lesson_id}:
+    parameters:
+      - name: block_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: lesson_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Редактировать урок
+      tags: [Уроки]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные об уроке
+              properties:
+                title:
+                  $ref: '#/components/parameters/Title'
+                content:
+                  $ref: '#/components/parameters/Content'
+      responses:
+        '201':
+          description: Урок отредактирован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lesson'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      summary: Удалить урок
+      tags: [Уроки]
+      responses:
+        '200':
+          description: Урок удален
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lesson'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /lessons/{lesson_id}/granules:
+    parameters:
+      - name: lesson_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Получить гранулы урока
+      tags: [Гранулы, Уроки]
+      responses:
+        '200':
+          description: Список гранул
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Granule'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+    post:
+      summary: Создать гранулу
+      tags: [Гранулы]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о грануле
+              properties:
+                type:
+                  $ref: '#/components/parameters/Type'
+      responses:
+        '201':
+          description: Гранула создана
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Granule'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /lessons/{lesson_id}/granules/{granule_id}:
+    parameters:
+      - name: lesson_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: granule_id
+        in: path
+        required: true
+        schema:
+          type: string
+    patch:
+      summary: Редактировать гранулу
+      tags: [Гранулы]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Данные о грануле
+              properties:
+                type:
+                  $ref: '#/components/parameters/Type'
+      responses:
+        '201':
+          description: Гранула отредактирована
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Granule'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+    delete:
+      summary: Удалить гранулу
+      tags: [Гранулы]
+      responses:
+        '200':
+          description: Гранула удален
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Granule'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+components:
+  parameters:
+    Title:
+      name: title
+      required: true
+      in: query
+      schema:
+        type: string
+        example: 'Профессиональная разработка на Ruby on Rails'
+    Description:
+      name: description
+      required: true
+      in: query
+      schema:
+        type: string
+        example: |
+          Ruby on Rails. Легендарный курс, выпустивший 1000+ профессионалов.
+          За 9 месяцев обучения и практики под руководством наставника освой
+          сверхвостребованную веб-технологию и гарантированно получи работу
+          максимум практики и детальный code review от профессиональных разработчиков
+    Order:
+      name: order
+      required: false
+      in: query
+      schema:
+        type: integer
+        example: 4
+    Content:
+      name: content
+      required: false
+      in: query
+      schema:
+        type: string
+    Type:
+      name: type
+      required: false
+      in: query
+      schema:
+        type: string
+        enum: [presentation, webinar, video]
+
+  schemas:
+    Course:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+
+    Block:
+      type: object
+      properties:
+        id:
+          type: string
+        course_id:
+          type: string
+        title:
+          type: string
+        order:
+          type: integer
+
+    Lesson:
+      type: object
+      properties:
+        id:
+          type: string
+        block_id:
+          type: string
+        title:
+          type: string
+        content:
+          type: string
+
+    Granule:
+      type: object
+      properties:
+        id:
+          type: string
+        lesson_id:
+          type: string
+        type:
+          type: string
+          enum: [presentation, webinar, video]
+
+    Pagination:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Общее количество элементов
+          example: 150
+        limit:
+          type: integer
+          description: Количество элементов на странице
+          example: 20
+        offset:
+          type: integer
+          description: Смещение относительно начала коллекции
+          example: 0
+
+  responses:      
+    BadRequest:
+      description: Неправильный, некорректный запрос
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: 400
+              message:
+                type: string
+                example: Неправильный, некорректный запрос
+    Unauthorized:
+      description: Не авторизован
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: 401
+              message:
+                type: string
+                example: Не авторизован
+    Forbidden:
+      description: Запрещено (не уполномочен)
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: 403
+              message:
+                type: string
+                example: Запрещено (не уполномочен)
+    InternalServerError:
+      description: Внутренняя ошибка сервера
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: 500
+              message:
+                type: string
+                example: Внутренняя ошибка сервера
