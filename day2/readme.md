@@ -11,6 +11,7 @@
 2.4. Генерация приложения при помощи гема [nextgen](https://github.com/mattbrictson/nextgen)
 
 ```
+gem exec nextgen create cources
 gem exec nextgen create oauth-github
 ```
 
