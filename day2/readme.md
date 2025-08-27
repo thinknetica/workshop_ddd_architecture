@@ -12,7 +12,6 @@
 
 ```
 gem exec nextgen create cources
-gem exec nextgen create oauth-github
 ```
 
 2.5. OpenAPI
@@ -20,12 +19,12 @@ gem exec nextgen create oauth-github
 Cсылки на документацию и инструменты:
 - [OpenAPI](https://spec.openapis.org/oas/v3.1.0)
 - [stoplight.io](https://stoplight.io/)
+- [education.yaml](education.yaml)
 - [swagger-editor](swagger-editor)
 - [redoc](https://github.com/Redocly/redoc)
 - [prism](https://github.com/stoplightio/prism)
 
 TODO-план:
-- OpenAPI
 - AsyncAPI
 
 Cсылки на документацию и инструменты:
