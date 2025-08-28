@@ -16,7 +16,7 @@ gem exec nextgen create cources
 
 2.5. OpenAPI
 
-Документирование REST-подхода
+Документирование REST-подхода.
 
 Cсылки на документацию и инструменты:
 - [OpenAPI](https://spec.openapis.org/oas/v3.1.0)
