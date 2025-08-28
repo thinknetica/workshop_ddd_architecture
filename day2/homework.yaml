@@ -1,0 +1,147 @@
+asyncapi: 3.0.0
+info:
+  title: Отправка домашней работы
+  version: 1.0.0
+  description: |-
+    API для отправки домашней работы на проверку
+defaultContentType: application/json
+servers:
+  scram-connections:
+    host: localhost:18092
+    protocol: kafka-secure
+    description: Test broker secured with scramSha256
+    security:
+      - $ref: '#/components/securitySchemes/saslScram'
+channels:
+  doneHomework:
+    address: homework.inbox
+    messages:
+      homework:
+        $ref: '#/components/messages/homework'
+    description: Топик, который используется для приема выполненных домашних заданий
+    parameters:
+      homework_id:
+        $ref: '#/components/parameters/homework_id'
+  markHomework:
+    address: homework.outbox
+    messages:
+      rework:
+        $ref: '#/components/messages/rework'
+      mark:
+        $ref: '#/components/messages/mark'
+    description: Топик, который используется для отправки проверенных домашних заданий
+    parameters:
+      homework_id:
+        $ref: '#/components/parameters/homework_id'
+operations:
+  sendHomework:
+    action: send
+    channel:
+      $ref: '#/channels/doneHomework'
+    summary: Домашняя работа, отправляемая студентом на проверку.
+    messages:
+      - $ref: '#/channels/doneHomework/messages/homework'
+  reworkHomework:
+    action: receive
+    channel:
+      $ref: '#/channels/markHomework'
+    summary: Домашняя работа, отправленная экспертом на доработку
+    messages:
+      - $ref: '#/channels/markHomework/messages/rework'
+  markHomework:
+    action: receive
+    channel:
+      $ref: '#/channels/markHomework'
+    summary: Домашняя работа c оценкой от эксперта
+    messages:
+      - $ref: '#/channels/markHomework/messages/mark'
+components:
+  messages:
+    homework:
+      name: doneHomework
+      title: Домашняя работа
+      summary: Выполненная домашняя работа, отправленная на проверку эксперту
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        $ref: '#/components/schemas/homeworkPayload'
+    rework:
+      name: reworkHomework
+      title: Доработка домашней работы
+      summary: Домашняя работа, отправленная экспертом на доработку
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        $ref: '#/components/schemas/reworkHomeworkPayload'
+    mark:
+      name: markHomework
+      title: Оцененная домашная работа
+      summary: Успешно выполненная домашняя работа с оценкой от эксперта
+      traits:
+        - $ref: '#/components/messageTraits/commonHeaders'
+      payload:
+        $ref: '#/components/schemas/markHomeworkPayload'
+  schemas:
+    homeworkPayload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Содержимое домашнего задания
+        student:
+          type: string
+          description: Имя и фамилия студента
+        sent_at:
+          $ref: '#/components/schemas/sentAt'
+    reworkHomeworkPayload:
+      type: object
+      properties:
+        content:
+          type: string
+          description: Ответ эксперта
+        expert:
+          type: string
+          description: Имя и фамилия эксперта
+        sent_at:
+          $ref: '#/components/schemas/sentAt'
+    markHomeworkPayload:
+      type: object
+      properties:
+        mark:
+          type: integer
+          minimum: 2
+          maximum: 5
+          description: Оценка домашней работы
+        content:
+          type: string
+          description: Ответ эксперта
+        expert:
+          type: string
+          description: Имя и фамилия эксперта
+        sent_at:
+          $ref: '#/components/schemas/sentAt'
+    sentAt:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
+  securitySchemes:
+    saslScram:
+      type: scramSha256
+      description: Provide your username and password for SASL/SCRAM authentication
+    certs:
+      type: X509
+      description: Download the certificate files from service provider
+  parameters:
+    streetlightId:
+      description: The ID of the streetlight.
+    homework_id:
+      description: Идентификатор домашнего задания
+  messageTraits:
+    commonHeaders:
+      headers:
+        type: object
+        properties:
+          my-app-header:
+            type: integer
+            minimum: 0
+            maximum: 100
