@@ -33,6 +33,7 @@ Cсылки на документацию и инструменты:
 Cсылки на документацию и инструменты:
 
 - [Концепция AsyncAPI](https://www.asyncapi.com/docs/concepts/asyncapi-document)
+- [Сравнение AsyncAPI и OpenAPI](https://www.asyncapi.com/docs/tutorials/getting-started/coming-from-openapi)
 - [AsyncAPI Studio](https://studio.asyncapi.com/)
 - [Документация по AsyncAPI](https://www.asyncapi.com/docs)
 - [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
