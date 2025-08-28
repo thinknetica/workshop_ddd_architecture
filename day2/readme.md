@@ -35,6 +35,7 @@ Cсылки на документацию и инструменты:
 - [Концепция AsyncAPI](https://www.asyncapi.com/docs/concepts/asyncapi-document)
 - [Сравнение AsyncAPI и OpenAPI](https://www.asyncapi.com/docs/tutorials/getting-started/coming-from-openapi)
 - [AsyncAPI Studio](https://studio.asyncapi.com/)
+- [GitHub AsyncAPI Studio](https://github.com/asyncapi/studio/tree/master)
 - [Документация по AsyncAPI](https://www.asyncapi.com/docs)
 - [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
 - [BPMN-диаграмма по решению домашнего задания](https://app.holst.so/share/b/222537fe-10cf-45bc-80ca-2132aa5e3936)
