@@ -16,6 +16,8 @@ gem exec nextgen create cources
 
 2.5. OpenAPI
 
+Документирование REST-подхода
+
 Cсылки на документацию и инструменты:
 - [OpenAPI](https://spec.openapis.org/oas/v3.1.0)
 - [stoplight.io](https://stoplight.io/)
@@ -24,11 +26,13 @@ Cсылки на документацию и инструменты:
 - [redoc](https://github.com/Redocly/redoc)
 - [prism](https://github.com/stoplightio/prism)
 
-TODO-план:
-- AsyncAPI
+2.6. AsyncAPI
+
+Документирование Event-driven подхода
 
 Cсылки на документацию и инструменты:
 
+- [Концепция AsyncAPI](https://www.asyncapi.com/docs/concepts/asyncapi-document)
 - [AsyncAPI Studio](https://studio.asyncapi.com/)
 - [Документация по AsyncAPI](https://www.asyncapi.com/docs)
 - [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
