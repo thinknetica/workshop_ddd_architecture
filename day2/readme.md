@@ -38,6 +38,8 @@ Cсылки на документацию и инструменты:
 - [Документация по AsyncAPI](https://www.asyncapi.com/docs)
 - [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
 
+Запуск AsyncAPI Studio локально:
+
 ```
 docker build -f apps/studio/Dockerfile -t asyncapi/studio .
 docker run -p 8080:80 asyncapi/studio
