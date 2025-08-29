@@ -118,18 +118,17 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
-Первую ссылку добавляем на главной странице app/views/home/index.html.erb
+Первую ссылку добавляем на главной странице app/views/home/index.html.slim
 
 ```
-<%= link_to "Sign in with GitHub", user_github_omniauth_authorize_path %>
+= button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false }
 ```
 
 Реализуем вход
 
 ```
-<% unless user_signed_in? %>
-  <%= button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false } %>
-<% else %>
-  <%= current_user.inspect %>
-<% end %>
+- unless user_signed_in?
+  = button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false }
+- else
+  = current_user.inspect
 ```
