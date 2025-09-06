@@ -2,13 +2,9 @@
 
 ## День 3. Поддержка и изменения в ходе эксплуатации
 
-3.1 [oauth-github-приложение](oauth-github)
+3.1 [oauth-github-приложение](oauth-github/README.md)
 
-3.2. Keycloack
-
-```
-docker run -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin -p 8080:8080 quay.io/keycloak/keycloak:22.0.0 start-dev 
-```
+3.2. [Keycloack](keycloack/readme.md)
 
 TODO-план:
 - вспомогательные домены
