@@ -8,13 +8,15 @@
 
 2.3. [Archimate: Бизнес-процесс привлечения лидов](leads.archimate)
 
-2.4. Генерация приложения при помощи гема [nextgen](https://github.com/mattbrictson/nextgen)
+2.4. [Элементы Archimate в Holst](https://app.holst.so/share/b/e1bf0319-6193-4c6f-b28f-9a8b7836354f)
+
+2.5. Генерация приложения при помощи гема [nextgen](https://github.com/mattbrictson/nextgen)
 
 ```
 gem exec nextgen create cources
 ```
 
-2.5. OpenAPI
+2.6. OpenAPI
 
 Документирование REST-подхода.
 
@@ -26,7 +28,7 @@ Cсылки на документацию и инструменты:
 - [redoc](https://github.com/Redocly/redoc)
 - [prism](https://github.com/stoplightio/prism)
 
-2.6. AsyncAPI
+2.7. AsyncAPI
 
 Документирование Event-driven подхода.
 
