@@ -2,6 +2,8 @@
 
 ## День 3. Поддержка и изменения в ходе эксплуатации
 
+3.1.[RFC6749](https://datatracker.ietf.org/doc/html/rfc6749)
+
 3.1 [oauth-github-приложение](oauth-github/README.md)
 
 3.2. [Keycloack](keycloack/readme.md)
