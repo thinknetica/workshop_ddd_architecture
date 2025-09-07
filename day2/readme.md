@@ -40,7 +40,7 @@ Cсылки на документацию и инструменты:
 - [GitHub AsyncAPI Studio](https://github.com/asyncapi/studio/tree/master)
 - [Документация по AsyncAPI](https://www.asyncapi.com/docs)
 - [Работа с AsyncAPI Studio](https://deepwiki.com/asyncapi/studio/2.2-docker-deployment)
-- [BPMN-диаграмма по решению домашнего задания](https://app.holst.so/share/b/222537fe-10cf-45bc-80ca-2132aa5e3936)
+- [Целевая BPMN-диаграмма](https://app.holst.so/share/b/222537fe-10cf-45bc-80ca-2132aa5e3936)
 - [homework.yml](homework.yml)
 
 Запуск AsyncAPI Studio локально:
