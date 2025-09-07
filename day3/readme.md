@@ -6,12 +6,11 @@
 
 3.2. [Стандарт JWT в RFC-7519](https://datatracker.ietf.org/doc/html/rfc7519)
 
-3.2. [oauth-github-приложение](oauth-github/README.md)
+3.3. [oauth-github-приложение](oauth-github/README.md)
 
-3.3. [Keycloack](keycloack/readme.md)
+3.4. [Keycloack](keycloack/readme.md)
 
-TODO-план:
-- вспомогательные домены
+Дополнительно описываем:
 - арх.решения
 - Освоим BPMN-диаграммы
 
