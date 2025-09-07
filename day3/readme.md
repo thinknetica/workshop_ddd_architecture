@@ -4,6 +4,8 @@
 
 3.1.[Стандарт Oauth2 в RFC-6749](https://datatracker.ietf.org/doc/html/rfc6749)
 
+3.2. [Стандарт JWT в RFC-7519](https://datatracker.ietf.org/doc/html/rfc7519)
+
 3.2 [oauth-github-приложение](oauth-github/README.md)
 
 3.3. [Keycloack](keycloack/readme.md)
