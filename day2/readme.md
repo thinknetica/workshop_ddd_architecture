@@ -21,6 +21,7 @@ gem exec nextgen create cources
 Документирование REST-подхода.
 
 Cсылки на документацию и инструменты:
+- [Структура образовательного контента](https://app.holst.so/share/b/e92283b2-0613-4776-b1de-055a2d037af7)
 - [OpenAPI](https://spec.openapis.org/oas/v3.1.0)
 - [stoplight.io](https://stoplight.io/)
 - [education.yaml](education.yaml)
