@@ -1,0 +1,8 @@
+apis:
+  sample@v1: 
+    root: openapi/openapi.yaml
+extends:
+  - minimal
+rules:
+  no-unused-components: error
+  no-server-example.com: off
