@@ -38,13 +38,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о курсе
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                description:
-                  $ref: '#/components/parameters/Description'
+              $ref: '#/components/schemas/CourseParams'
       responses:
         '201':
           description: Курс создан
@@ -89,13 +83,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о курсе
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                description:
-                  $ref: '#/components/parameters/Description'
+              $ref: '#/components/schemas/CourseParams'
       responses:
         '200':
           description: Курс отредактирован
@@ -164,13 +152,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о блоке
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                order:
-                  $ref: '#/components/parameters/Order'
+              $ref: '#/components/schemas/BlockParams'
       responses:
         '201':
           description: Блок создан
@@ -205,13 +187,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о блоке
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                order:
-                  $ref: '#/components/parameters/Order'
+              $ref: '#/components/schemas/BlockParams'
       responses:
         '200':
           description: Блок отредактирован
@@ -280,13 +256,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные об уроке
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                content:
-                  $ref: '#/components/parameters/Content'
+              $ref: '#/components/schemas/LessonParams'
       responses:
         '201':
           description: Урок создан
@@ -321,13 +291,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные об уроке
-              properties:
-                title:
-                  $ref: '#/components/parameters/Title'
-                content:
-                  $ref: '#/components/parameters/Content'
+              $ref: '#/components/schemas/LessonParams'
       responses:
         '201':
           description: Урок отредактирован
@@ -390,11 +354,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о грануле
-              properties:
-                type:
-                  $ref: '#/components/parameters/Type'
+              $ref: '#/components/schemas/GranuleParams'
       responses:
         '201':
           description: Гранула создана
@@ -429,11 +389,7 @@ paths:
         content:
           application/json:
             schema:
-              type: object
-              description: Данные о грануле
-              properties:
-                type:
-                  $ref: '#/components/parameters/Type'
+              $ref: '#/components/schemas/GranuleParams'
       responses:
         '201':
           description: Гранула отредактирована
@@ -465,47 +421,48 @@ paths:
           $ref: '#/components/responses/InternalServerError'
 
 components:
-  parameters:
-    Title:
-      name: title
-      required: true
-      in: query
-      schema:
-        type: string
-        example: 'Профессиональная разработка на Ruby on Rails'
-    Description:
-      name: description
-      required: true
-      in: query
-      schema:
-        type: string
-        example: |
-          Ruby on Rails. Легендарный курс, выпустивший 1000+ профессионалов.
-          За 9 месяцев обучения и практики под руководством наставника освой
-          сверхвостребованную веб-технологию и гарантированно получи работу
-          максимум практики и детальный code review от профессиональных разработчиков
-    Order:
-      name: order
-      required: false
-      in: query
-      schema:
-        type: integer
-        example: 4
-    Content:
-      name: content
-      required: false
-      in: query
-      schema:
-        type: string
-    Type:
-      name: type
-      required: false
-      in: query
-      schema:
-        type: string
-        enum: [presentation, webinar, video]
-
   schemas:
+    CourseParams:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+      required:
+        - title
+        - description
+
+    BlockParams:
+      type: object
+      properties:
+        title:
+          type: string
+        order:
+          type: integer
+      required:
+        - title
+        - order
+    
+    LessonParams:
+      type: object
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+      required:
+        - title
+        - content
+
+    GranuleParams:
+      type: object
+      properties:
+        type:
+          type: string
+      required:
+        - type
+
     Course:
       type: object
       properties:

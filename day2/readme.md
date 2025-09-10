@@ -27,6 +27,13 @@ Cсылки на документацию и инструменты:
 - [education.yaml](education.yaml)
 - [swagger-editor](swagger-editor)
 - [redoc](https://github.com/Redocly/redoc)
+- [Документация redoc](https://redocly.com/docs/cli/quickstart)
+
+```
+redocly lint education.yaml
+redocly build-docs education.yaml
+```
+
 - [prism](https://github.com/stoplightio/prism)
 
 2.7. AsyncAPI
