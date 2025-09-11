@@ -1,0 +1,174 @@
+{
+  "projectName": "studio",
+  "projectOwner": "asyncapi",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "magicmatatjahu",
+      "name": "Maciej Urbańczyk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20404945?v=4",
+      "profile": "https://github.com/magicmatatjahu",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc",
+        "bug",
+        "ideas",
+        "review",
+        "design",
+        "test",
+        "infra",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "fmvilas",
+      "name": "Fran Méndez",
+      "avatar_url": "https://avatars.githubusercontent.com/u/242119?v=4",
+      "profile": "http://www.fmvilas.com/",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc",
+        "bug",
+        "ideas",
+        "review",
+        "design",
+        "test",
+        "infra",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "boyney123",
+      "name": "David Boyne",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3268013?v=4",
+      "profile": "https://boyney.io/",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc",
+        "bug",
+        "ideas",
+        "review",
+        "design",
+        "test",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "mcturco",
+      "name": "Missy Turco",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60163079?v=4",
+      "profile": "https://missyturco.com/",
+      "contributions": [
+        "maintenance",
+        "code",
+        "ideas",
+        "review",
+        "design",
+        "mentoring"
+      ]
+    },
+    {
+      "login": "fgreinacher",
+      "name": "Florian Greinacher",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1540469?v=4",
+      "profile": "https://florian.greinacher.de/",
+      "contributions": [
+        "code",
+        "infra",
+        "bug",
+        "doc"
+      ]
+    },
+    {
+      "login": "ritik307",
+      "name": "Ritik Rawal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22374829?v=4",
+      "profile": "https://ritik307.github.io/portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Samridhi-98",
+      "name": "Samriddhi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/54466041?v=4",
+      "profile": "https://samridhi-98.github.io/Portfolio",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "pawlean",
+      "name": "Pauline P. Narvas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17087373?v=4",
+      "profile": "https://paulinenarvas.com/",
+      "contributions": [
+        "code",
+        "infra",
+        "doc"
+      ]
+    },
+    {
+      "login": "jonaslagoni",
+      "name": "Jonas Lagoni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13396189?v=4",
+      "profile": "https://linkedin.com/in/jonaslagoni/",
+      "contributions": [
+        "ideas",
+        "question",
+        "review"
+      ]
+    },
+    {
+      "login": "smoya",
+      "name": "Sergio Moya",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1083296?v=4",
+      "profile": "https://github.com/smoya",
+      "contributions": [
+        "ideas",
+        "question"
+      ]
+    },
+    {
+      "login": "BOLT04",
+      "name": "David Pereira",
+      "avatar_url": "https://avatars.githubusercontent.com/u/18630253?v=4",
+      "profile": "https://bolt04.github.io/react-ultimate-resume/",
+      "contributions": [
+        "ideas",
+        "question"
+      ]
+    },
+    {
+      "login": "nawed2611",
+      "name": "Nawed Ali",
+      "avatar_url": "https://avatars.githubusercontent.com/u/83456083?v=4",
+      "profile": "https://nawedali.tech",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "aeworxet",
+      "name": "Viacheslav Turovskyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16149591?v=4",
+      "profile": "https://github.com/aeworxet",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}
