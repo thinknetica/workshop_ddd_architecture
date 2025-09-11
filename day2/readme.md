@@ -9,6 +9,7 @@
 - [Пользовательские истории](https://app.holst.so/share/b/439e26d3-3ad1-4fb4-8f15-af17b0feac85)
 - Пользовательские Истории. Майк Кон - 2012
 - Пользовательские Истории. Искусство гибкой разработки. Джефф Паттон - 2017
+- [Чем Use Case отличаются от User Story](https://habr.com/ru/companies/otus/articles/825692/?ysclid=mfcrhvy2tc296491738)
 
 2.3. [Archimate: Бизнес-процесс привлечения лидов](leads.archimate)
 
