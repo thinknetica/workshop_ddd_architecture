@@ -18,7 +18,7 @@ gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 
 gem 'slim-rails'
-gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
+gem 'html2slim', git: 'https://github.com/slim-template/html2slim.git'
 
 group :development, :test do
   gem "brakeman", require: false

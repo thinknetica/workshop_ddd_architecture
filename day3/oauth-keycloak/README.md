@@ -36,7 +36,8 @@ bundle exec rails db:migrate
 Устанавливаем гем html2slim, добавляя его в Gemfile
 
 ```
-gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
+gem 'slim-rails'
+gem 'html2slim', git: 'https://github.com/slim-template/html2slim.git'
 ```
 
 Pапускаем утилиту
@@ -96,4 +97,37 @@ user_keycloakopenid_omniauth_callback  /users/auth/keycloakopenid/callbac
 
 ```
 devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+```
+
+В app/controllers/users/omniauth_callbacks_controller.rb реализуем логику обработки callback-вызова
+
+```
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  skip_before_action :verify_authenticity_token, only: :github
+
+  def github
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+
+    if @user.persisted?
+      sign_in_and_redirect @user, event: :authentication
+      set_flash_message(:notice, :success, kind: "Github") if is_navigational_format?
+    else
+      session["devise.github_data"] = request.env["omniauth.auth"].except(:extra)
+      redirect_to new_user_registration_url
+    end
+  end
+
+  def failure
+    redirect_to root_path
+  end
+end
+```
+
+Реализуем вход на главной странице app/views/home/index.html.slim
+
+```
+- unless user_signed_in?
+  = button_to "Sign in with Keycloak", user_keycloakopenid_omniauth_authorize_path, data: { turbo: false }
+- else
+  = current_user.inspect
 ```
