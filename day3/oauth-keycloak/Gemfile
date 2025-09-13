@@ -1,0 +1,37 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "bootsnap", require: false
+gem "good_migrations"
+gem "importmap-rails"
+gem "pg", "~> 1.1"
+gem "propshaft"
+gem "puma", ">= 5.0"
+gem "rails", "~> 8.0.2", ">= 8.0.2.1"
+gem "tzinfo-data", platforms: %i[windows jruby]
+
+group :development, :test do
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "dotenv", ">= 3.0"
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+end
+
+group :development do
+  gem "bundler-audit", require: false
+  gem "erb_lint", require: false
+  gem "rack-mini-profiler"
+  gem "rubocop", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "web-console"
+end
+
+group :test do
+  gem "capybara", require: false
+  gem "selenium-webdriver", require: false
+  gem "shoulda-matchers"
+end
