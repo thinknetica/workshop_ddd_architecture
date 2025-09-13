@@ -122,13 +122,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
-Первую ссылку добавляем на главной странице app/views/home/index.html.slim
-
-```
-= button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false }
-```
-
-Реализуем вход
+Реализуем вход на главной странице app/views/home/index.html.slim
 
 ```
 - unless user_signed_in?
