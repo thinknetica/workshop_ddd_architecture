@@ -1,5 +1,9 @@
 # Настройка проекта
 
+## Цель
+
+Проект oauth2-клиента, который использует с качестве oauth-сервера GitHub.
+
 ## Генератор Rails-приложений
 
 ```
@@ -47,7 +51,7 @@ bundle exec erb2slim -d .
 
 Создаем oauth-приложение [GitHub OAuth Apps Page](https://github.com/settings/developers).
 
-Приложение находится по [ссылке](https://github.com/settings/applications/3136344)
+Приложение находится по [ссылке вида](https://github.com/settings/applications/3136344). У вас будет своя ссылка.
 
 Параметры `Client ID` и `Client secrets` помещаем в `.env` файл.
 
