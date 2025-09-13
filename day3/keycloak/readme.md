@@ -28,3 +28,11 @@ docker compose up --build
 6. Создаем роль experts и добавляем в нее пользователя lms
 
 ### Создание клиента
+
+1. Создаем клиента с ClientID: lms
+2. В качестве Client Type выбираем OpenID Connect
+3. Чекбокс Always display in UI оставляем выключенным (если только не нужно каждый раз показывать keycloak-форму)
+4. В качестве Authentication flow оставляем по умолчанию Standard flow
+
+
+X. Выставляем в поле Web origins символ +, чтобы предотвратить ошибки с CORS-заголовками
