@@ -7,5 +7,6 @@ class User < ApplicationRecord
     :registerable,
     :recoverable,
     :rememberable,
-    :validatable
+    :validatable,
+    :omniauthable, omniauth_providers: %i[keycloakopenid]
 end

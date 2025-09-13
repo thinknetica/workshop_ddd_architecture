@@ -52,3 +52,48 @@ bundle exec erb2slim -d .
 Создаем oauth-приложение lms в локальном keycloak.
 
 Параметры `Client ID` и `Client secrets` помещаем в `.env` файл.
+
+Далее подключаем гем omniauth-keycloak
+
+```
+gem 'omniauth-keycloak'
+gem 'omniauth-rails_csrf_protection'
+```
+
+Добавляем параметры для дополнительных полей в таблице users
+
+```
+bundle exec rails g migration AddOmniauthToUsers provider:string uid:string
+bundle exec rails db:migrate
+```
+
+В config/initializers/devise.rb добавляем строку
+
+```
+config.omniauth :keycloak_openid, "lms", "", client_options: { site: "http://localhost:8000", realm: "education" }, strategy_class: OmniAuth::Strategies::KeycloakOpenId
+```
+
+В модель `User` добавляем модуль `:omniauthable`
+
+```
+class User < ApplicationRecord
+  #...
+  devise :omniauthable, omniauth_providers: %i[keycloakopenid]
+  #...
+end
+```
+
+Выполнив команду `bundle exec rails routes` можно убедиться, что добавлено два новых роута
+
+```
+user_keycloakopenid_omniauth_authorize /users/auth/keycloakopenid
+user_keycloakopenid_omniauth_callback  /users/auth/keycloakopenid/callbac
+```
+
+Первый предназначен для обращения со страниц сайта, второй дергает Keycloak после успешной аутентификации пользователей.
+
+Для реализации callback-а добавляем в config/routes.rb строку (точнее модифицируем ранее добавленную)
+
+```
+devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+```
