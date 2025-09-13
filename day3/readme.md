@@ -6,9 +6,14 @@
 
 3.2. [Стандарт JWT в RFC-7519](https://datatracker.ietf.org/doc/html/rfc7519)
 
-3.3. [oauth-github-приложение](oauth-github/README.md)
+3.3. [Гем omniauth](https://github.com/omniauth/omniauth)
 
-3.4. [Keycloack](keycloack/readme.md)
+3.4. [Стратегии omniauth](https://github.com/omniauth/omniauth/wiki/List-of-Strategies)
+
+3.5. [oauth-github-приложение](oauth-github/README.md)
+
+3.6. [Keycloack](keycloack/readme.md)
+
 
 Дополнительно описываем:
 - арх.решения

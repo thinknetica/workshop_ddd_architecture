@@ -44,3 +44,11 @@ Pапускаем утилиту
 ```
 bundle exec erb2slim -d .
 ```
+
+## Установка гема omniauth-github
+
+Настройка ведется по [инструкции](https://github.com/heartcombo/devise/wiki/OmniAuth:-Overview). В ней приводится настройка через oauth фейсбука, мы будем настраивать через github, поэтому потребуется некоторая адаптация.
+
+Создаем oauth-приложение lms в локальном keycloak.
+
+Параметры `Client ID` и `Client secrets` помещаем в `.env` файл.
