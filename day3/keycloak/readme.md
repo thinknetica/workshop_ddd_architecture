@@ -33,6 +33,6 @@ docker compose up --build
 2. В качестве Client Type выбираем OpenID Connect
 3. Чекбокс Always display in UI оставляем выключенным (если только не нужно каждый раз показывать keycloak-форму)
 4. В качестве Authentication flow оставляем по умолчанию Standard flow
-
-
-X. Выставляем в поле Web origins символ +, чтобы предотвратить ошибки с CORS-заголовками
+5. Выставляем Root URL, Home URL и Valid redirect URIs в http://localhost:8000/.
+6. Выставляем в поле Valid post logout redirect URIs символ +
+7. Выставляем в поле Web origins символ +, чтобы предотвратить ошибки с CORS-заголовками
