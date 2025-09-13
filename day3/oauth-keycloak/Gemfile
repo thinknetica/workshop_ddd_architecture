@@ -13,7 +13,7 @@ gem "tzinfo-data", platforms: %i[windows jruby]
 
 gem 'devise'
 gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
-gem 'omniauth-github'
+gem 'omniauth-keycloak'
 gem 'omniauth-rails_csrf_protection'
 
 group :development, :test do
