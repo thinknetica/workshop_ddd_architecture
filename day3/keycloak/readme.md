@@ -36,3 +36,19 @@ docker compose up --build
 5. Выставляем Root URL, Home URL и Valid redirect URIs в http://localhost:8000/.
 6. Выставляем в поле Valid post logout redirect URIs символ +
 7. Выставляем в поле Web origins символ +, чтобы предотвратить ошибки с CORS-заголовками
+
+### Примеры на JavaScript
+
+Запускаем backend
+
+```
+docker build -t backend .
+docker run -p 3000:3000 backend
+```
+
+Запускаем frontend
+
+```
+docker build -t frontend .
+docker run -p 8000:8000 frontend
+```
