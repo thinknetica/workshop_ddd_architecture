@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/slim-template/html2slim.git
+  revision: 4c3526d36c5bcc2de37a04603ee90c374bff3e99
+  specs:
+    html2slim (0.2.0)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -376,6 +383,7 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails
   good_migrations
+  html2slim!
   importmap-rails
   pg (~> 1.1)
   propshaft
