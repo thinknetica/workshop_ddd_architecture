@@ -1,15 +1,17 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  skip_before_action :verify_authenticity_token, only: :github
+  skip_before_action :verify_authenticity_token, only: :keycloakopenid
 
-  def github
+  def keycloakopenid
     Rails.logger.info "########################################################################"
-    Rails.logger.info "Внутри метода github"
+    Rails.logger.info "Внутри метода keycloakopenid"
     Rails.logger.info "########################################################################"
+    Rails.logger.info request.env
+    Rails.logger.info "########################################################################"
+    # binding.pry
+    # omniauth.auth
     @user = User.from_omniauth(request.env["omniauth.auth"])
     Rails.logger.info "########################################################################"
     Rails.logger.info @user
-    Rails.logger.info "########################################################################"
-    Rails.logger.info request.env
     Rails.logger.info "########################################################################"
 
     if @user.persisted?

@@ -71,7 +71,7 @@ bundle exec rails db:migrate
 В config/initializers/devise.rb добавляем строку
 
 ```
-config.omniauth :keycloak_openid, "lms", "", client_options: { site: "http://localhost:8000", realm: "education" }, strategy_class: OmniAuth::Strategies::KeycloakOpenId
+config.omniauth :keycloak_openid, "lms", "", client_options: { site: "http://localhost:8080", realm: "education" }, strategy_class: OmniAuth::Strategies::KeycloakOpenId
 ```
 
 В модель `User` добавляем модуль `:omniauthable`
@@ -103,16 +103,24 @@ devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks'
 
 ```
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  skip_before_action :verify_authenticity_token, only: :github
+  skip_before_action :verify_authenticity_token, only: :keycloakopenid
 
-  def github
+  def keycloakopenid
+    Rails.logger.info "########################################################################"
+    Rails.logger.info "Внутри метода keycloakopenid"
+    Rails.logger.info "########################################################################"
     @user = User.from_omniauth(request.env["omniauth.auth"])
+    Rails.logger.info "########################################################################"
+    Rails.logger.info @user
+    Rails.logger.info "########################################################################"
+    Rails.logger.info request.env
+    Rails.logger.info "########################################################################"
 
     if @user.persisted?
       sign_in_and_redirect @user, event: :authentication
-      set_flash_message(:notice, :success, kind: "Github") if is_navigational_format?
+      set_flash_message(:notice, :success, kind: "Keycloak") if is_navigational_format?
     else
-      session["devise.github_data"] = request.env["omniauth.auth"].except(:extra)
+      session["devise.keycloak_data"] = request.env["omniauth.auth"].except(:extra)
       redirect_to new_user_registration_url
     end
   end
@@ -121,6 +129,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to root_path
   end
 end
+
 ```
 
 Реализуем вход на главной странице app/views/home/index.html.slim
@@ -131,3 +140,5 @@ end
 - else
   = current_user.inspect
 ```
+
+TODO: Добавить в модель from_omniauth(auth) и в github тоже
