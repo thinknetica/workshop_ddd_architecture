@@ -30,3 +30,17 @@ bundle exec rails generate devise:install
 bundle exec rails generate devise User
 bundle exec rails db:migrate
 ```
+
+## Работаем со slim
+
+Устанавливаем гем html2slim, добавляя его в Gemfile
+
+```
+gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
+```
+
+Pапускаем утилиту
+
+```
+bundle exec erb2slim -d .
+```

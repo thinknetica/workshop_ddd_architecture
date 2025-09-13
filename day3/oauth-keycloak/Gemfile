@@ -12,6 +12,7 @@ gem "rails", "~> 8.0.2", ">= 8.0.2.1"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
 gem 'devise'
+gem "html2slim", git: "https://github.com/slim-template/html2slim.git"
 
 group :development, :test do
   gem "debug", platforms: %i[mri windows], require: "debug/prelude"
