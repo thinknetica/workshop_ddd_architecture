@@ -12,8 +12,9 @@
 
 3.5. [oauth-github-приложение](oauth-github/README.md)
 
-3.6. [Keycloack](keycloack/readme.md)
+3.6. [Keycloak](keycloack/readme.md)
 
+3.7. [oauth-keycloak-приложение](oauth-keycloak/README.md)
 
 Дополнительно описываем:
 - арх.решения
