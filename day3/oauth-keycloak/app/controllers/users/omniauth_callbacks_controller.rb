@@ -7,8 +7,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     Rails.logger.info "########################################################################"
     Rails.logger.info request.env
     Rails.logger.info "########################################################################"
-    # binding.pry
-    # omniauth.auth
     @user = User.from_omniauth(request.env["omniauth.auth"])
     Rails.logger.info "########################################################################"
     Rails.logger.info @user
