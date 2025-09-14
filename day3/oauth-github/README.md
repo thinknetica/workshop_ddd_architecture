@@ -59,33 +59,33 @@ bundle exec erb2slim -d .
 
 Далее подключаем гем omniauth-github
 
-```
+```ruby
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 ```
 
 Добавляем параметры для дополнительных полей в таблице users
 
-```
+```ruby
 bundle exec rails g migration AddOmniauthToUsers provider:string uid:string
 bundle exec rails db:migrate
 ```
 
 В config/initializers/devise.rb добавляем строку
 
-```
+```ruby
 config.omniauth :github, ENV['APP_ID'], ENV['APP_SECRET'], scope: 'user,public_repo'
 ```
 
 В модель `app/models/user.rb` добавляем модуль `:omniauthable`
 
-```
+```ruby
 devise :omniauthable, omniauth_providers: %i[github]
 ```
 
 Выполнив команду `bundle exec rails routes` можно убедиться, что добавлено два новых роута
 
-```
+```ruby
 user_github_omniauth_authorize /users/auth/github
 user_github_omniauth_callback  /users/auth/github/callback
 ```
@@ -94,13 +94,13 @@ user_github_omniauth_callback  /users/auth/github/callback
 
 Для реализации callback-а добавляем в config/routes.rb строку (точнее модифицируем ранее добавленную)
 
-```
+```ruby
 devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 ```
 
 В app/controllers/users/omniauth_callbacks_controller.rb реализуем логику обработки callback-вызова
 
-```
+```ruby
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: :github
 
@@ -122,9 +122,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
-Расширяем модель методами `from_omniauth` и `new_with_session`:
+Расширяем модель User методами `from_omniauth` и `new_with_session`:
 
-```
+```ruby
 class User < ApplicationRecord
   devise :database_authenticatable,
     :registerable,
@@ -152,7 +152,7 @@ end
 
 Реализуем вход на главной странице app/views/home/index.html.slim
 
-```
+```ruby
 - unless user_signed_in?
   = button_to "Sign in with GitHub", user_github_omniauth_authorize_path, data: { turbo: false }
 - else
