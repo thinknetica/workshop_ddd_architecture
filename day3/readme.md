@@ -16,6 +16,8 @@
 
 3.7. [oauth-keycloak-приложение](oauth-keycloak/README.md)
 
+3.8. [Гем doorkeeper](https://github.com/doorkeeper-gem/doorkeeper)
+
 Дополнительно описываем:
 - арх.решения
 - Освоим BPMN-диаграммы
