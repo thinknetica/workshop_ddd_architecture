@@ -39,6 +39,8 @@ docker compose up --build
 
 ### Примеры на JavaScript
 
+В папке javascript имеются отладочные javascript-приложения для тестирования входа через OAuth2
+
 Запускаем backend
 
 ```
