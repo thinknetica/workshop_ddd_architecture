@@ -20,6 +20,8 @@
 
 3.9. [Гем doorkeeper](https://github.com/doorkeeper-gem/doorkeeper)
 
+3.10. [Примеры ADR](https://github.com/asyncapi/studio/tree/master/doc/adr)
+
 Дополнительно описываем:
 - арх.решения
 
