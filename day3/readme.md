@@ -22,9 +22,4 @@
 
 3.10. [Примеры RFC](rfc/readme.md)
 
-3.10. [Примеры ADR](https://github.com/asyncapi/studio/tree/master/doc/adr)
-
-Дополнительно описываем:
-- арх.решения
-
-ADR неплохо прописаны в https://github.com/asyncapi/studio/tree/master
+3.11. [Примеры ADR](https://github.com/asyncapi/studio/tree/master/doc/adr)
