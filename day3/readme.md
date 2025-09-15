@@ -20,7 +20,6 @@
 
 3.9. [Гем doorkeeper](https://github.com/doorkeeper-gem/doorkeeper)
 
-Дополнительно описываем:
-- арх.решения
+3.10. [Примеры RFC](rfc/readme.md)
 
-ADR неплохо прописаны в https://github.com/asyncapi/studio/tree/master
+3.11. [Примеры ADR](https://github.com/asyncapi/studio/tree/master/doc/adr)
